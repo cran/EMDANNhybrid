@@ -1,14 +1,14 @@
 #EMD based ANN model
-EMDANNhybrid=function(data,k,l,n,r,m)
-  {
+EMDANNhybrid <- function(data,k,l,n,r,m)
+{
   data_org=as.matrix(data)
   xt=as.matrix(data_org)
   xt=as.vector(data_org)
   xt=ts(xt)
   #EMD
   #code for display no.of imf and residual
-  try=emd(xt,boundary = "wave")
-  imf_extr=try$imf
+  try=EMD::emd(xt)
+  imf_extr= try$imf
   emd_residual=try$residue
   no_of_imf=try$nimf
   len_extr_imf=length(imf_extr[,1])
@@ -44,7 +44,7 @@ EMDANNhybrid=function(data,k,l,n,r,m)
     predicted_out[,i]=as.vector(forecasted_value)
     final_predict_imf=final_predict_imf+predicted_out[,i]
   }
-   lenght_of_residual=length(emd_residual)
+  lenght_of_residual=length(emd_residual)
   #differencing
   dif_resid=diff(emd_residual)
   len_dresid=length(dif_resid)
@@ -59,7 +59,7 @@ EMDANNhybrid=function(data,k,l,n,r,m)
   traindatar=datar[1:r_trainr,]
   testdatar=datar[(r_trainr+1):len_datar,]
 
-  model_Annr<-nnetar(traindata, Lag= l,size=n, repeats=r, maxit=m)
+  model_Annr<-forecast::nnetar(traindata, Lag= l,size=n, repeats=r, maxit=m)
 
   #out sample
   t_r=length(testdatar)
@@ -79,8 +79,9 @@ EMDANNhybrid=function(data,k,l,n,r,m)
   #Mean absolute percent error (MAPE)
   MAPE_out=mean(abs((test_data_original-final_prediction)/test_data_original))
   prediction_accuracy=cbind(RMSE_out,MAD_out,MAPE_out)
-  output_f=list(final_prediction,prediction_accuracy)
+  output_f=list(Prediction_Accuracy_EMDANN=prediction_accuracy, Final_Prediction_EMDANN = final_prediction)
   return(output_f)
 }
+
 
 

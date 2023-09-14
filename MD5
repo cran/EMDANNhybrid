@@ -1,4 +1,11 @@
-b3d2b7c205f692f76d67004a7612ca81 *DESCRIPTION
-322072bd454ee73d22c50d187cb185e6 *NAMESPACE
-9b3ea40a8ba08ba9971a0a0888a53fe9 *R/EMDANNhybrid.R
-b7f1b7f96eda4bb3ed5b79dc22cb1137 *man/EMDANNhybrid.Rd
+6a570307ba0672c25ff24e93c3fd2698 *DESCRIPTION
+6a2e48a9c4ab0d24d4e6df332714d85b *NAMESPACE
+544ae883d9530b9ffcce3434f0b30afb *R/EMDANNhybrid.R
+7500f915f4e9d1996e6dbdb45b3f82ea *build/vignette.rds
+7a209d5107cb6f4c67b8ceac1a0c62cb *inst/doc/EMDANNhybrid.R
+7e60f65eca64f0af8041b6ce6cb84f84 *inst/doc/EMDANNhybrid.Rmd
+9246915061577e6bf29d03607ef4ab0f *inst/doc/EMDANNhybrid.html
+3c41a2543c87e13f18628ebf23eba4fd *man/EMDANNhybrid.Rd
+656dd430ce65c15077d8f891ee6f1dbb *tests/testthat.R
+c17c5bf307b305721b3edbb78a7f48d3 *tests/testthat/test.EMDANNhybrid.R
+7e60f65eca64f0af8041b6ce6cb84f84 *vignettes/EMDANNhybrid.Rmd
